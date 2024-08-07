@@ -1,0 +1,19 @@
+<div class="container_second">
+    <h2>Manutenção</h2>
+    <div class="illustration">
+        <p>
+            Aqui são serviços mais feitos,solicitado por clientes.
+        </p>
+        <br>
+        <img src="static/css/maintenance_image/fundo_maquinas.png" alt="Imagem">
+    </div>
+    <div class="content_post">
+        {% block posts %}
+            {% for post in posts %}
+                {% if post.category == "Manutenção" %}
+                    {% include "home/global/parcial/postblock.html" %}
+                {% endif %}
+            {% endfor %}
+        {% endblock posts %}
+    </div>
+</div>

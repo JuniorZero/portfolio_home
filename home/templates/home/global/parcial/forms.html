@@ -1,0 +1,13 @@
+<div class="forms">
+  <h2>Feedback</h2>
+  <form action="{% url "create_empresa" %}" method='POST'>
+    {% csrf_token %}
+    {{form.as_p}}
+    <label for="name">Nome da Empresa</label>
+    <input type="text" id="name" name="name">
+    <label for="descricao">Avaliação</label>
+    <textarea name="descricao" id="descricao"></textarea>
+    <p>Escreva sugestôes, pontos negativos ou o que falta para ao candidato, encaixa-se para vaga de emprego e melhorar o portfólio.</p>
+    <button type='submit'>Salvar</button>
+  </form>
+</div>

@@ -1,0 +1,19 @@
+<div class="container_second">
+    <h2>Programas</h2>
+    <div class="illustration">
+        <p>
+            Aqui contém o nome dos programas usados diariamente.
+        </p>
+        <br>
+        <img src="static/css/programs_image/fundo_pesquisa.png" alt="Imagem">
+    </div>
+    <div class="content_post">
+        {% block posts %}
+            {% for post in posts %}
+                {% if post.category == "Programas" %}
+                    {% include "home/global/parcial/postblock.html" %}
+                {% endif %}
+            {% endfor %}
+        {% endblock posts %}
+    </div>
+</div>

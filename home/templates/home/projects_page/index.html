@@ -1,0 +1,20 @@
+
+<div class="container_second">
+    <h2>Projetos</h2>
+    <div class="illustration">
+        <p>
+            Aqui tem projetos finalizados com links do github.
+        </p>
+        <br>
+        <img src="static/css/projects_image/fundo_invencao.png" alt="Imagem">
+    </div>
+    <div class="content_post">
+        {% block posts %}
+            {% for post in posts %}
+                {% if post.category == "Projetos" %}
+                    {% include "home/global/parcial/postblock.html" %}
+                {% endif %}
+            {% endfor %}
+        {% endblock posts %}
+    </div>
+</div>

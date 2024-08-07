@@ -1,0 +1,8 @@
+<article class="post" >
+    <header >
+        <h3 class="post_title">{{ post.title }}</h3>
+    </header>
+    {% if post.category == 'Projetos' %}
+        <a class="post_link" href="{{ post.link }}" target="_blank" rel="noopener noreferrer">Link</a>
+    {% endif %}
+</article>
