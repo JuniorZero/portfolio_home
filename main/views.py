@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from home.lista import posts
+from main.lista import posts
 from django.shortcuts import render
 from .formulario import EmpresaForm
 from email.message import EmailMessage
 import smtplib
 import csv
 
-def home(request):
+def main(request):
 
     context={
         'posts': posts
@@ -14,42 +14,42 @@ def home(request):
 
     return render(
         request,
-        'home/global/index.html',
+        'main/global/index.html',
         context,
     )
 
 def author_profile(request):
     return render(
         request,
-        'home/profile_page/index.html'
+        'main/profile_page/index.html'
     )
 
 def projects_created(request):
 
     return render(
         request,
-        'home/projects_page/index.html'
+        'main/projects_page/index.html'
     )
 
 def programs_used(request):
 
     return render(
         request,
-        'home/programs_page/index.html'
+        'main/programs_page/index.html'
     )
 
 def book_reading(request):
 
     return render(
         request,
-        'home/book_page/index.html'
+        'main/book_page/index.html'
     )
 
 def maintenance(request):
 
     return render(
         request,
-        'home/maintenance_page/index.html'
+        'main/maintenance_page/index.html'
     )
 
 def create_empresa(request):
@@ -57,10 +57,10 @@ def create_empresa(request):
         form = EmpresaForm(request.POST)
         if form.is_valid():
             name = form.cleaned_data['name']
-            descricao = form.cleaned_data['descricao']
+            assessment = form.cleaned_data['assessment']
             with open('avaliacao_empresa.txt', mode='a') as file:
                 writer = csv.writer(file)
-            writer.writerow([name,descricao])
+            writer.writerow([name,assessment])
             email_com_anexo()
             return render(request, "Sucesso")
         else:

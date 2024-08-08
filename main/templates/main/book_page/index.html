@@ -1,18 +1,17 @@
-
 <div class="container_second">
-    <h2>Projetos</h2>
+    <h2>Livros</h2>
     <div class="illustration">
         <p>
-            Aqui tem projetos finalizados com links do github.
+            Aqui podem ser vistos títulos dos livros já estudados.
         </p>
         <br>
-        <img src="static/css/projects_image/fundo_invencao.png" alt="Imagem">
+        <img src="static/css/book_image/fundo_robo.png" alt="Imagem">
     </div>
     <div class="content_post">
         {% block posts %}
             {% for post in posts %}
-                {% if post.category == "Projetos" %}
-                    {% include "home/global/parcial/postblock.html" %}
+                {% if post.category == "Livros" %}
+                    {% include "main/global/parcial/postblock.html" %}
                 {% endif %}
             {% endfor %}
         {% endblock posts %}
