@@ -70,15 +70,15 @@ def create_empresa(request):
 def email_com_anexo():
     msg = EmailMessage()
     msg['Subject'] = 'Avaliacao da Empresa'
-    msg['From'] = 'macedojunior317@gmail.com'
-    msg['To'] = 'macedojunior317@gmail.com'
+    msg['From'] = 'cs.portfolio719@gmail.com'
+    msg['To'] = 'cs.portfolio719@gmail.com'
     msg.set_content('Senhor, avaliação da empresa chegou, verifica o anexo')
     try:
         with open('avaliacao_empresa.csv','rb') as file:
             file_data = file.read()
             msg.add_attachment(file_data, maintype='text', subtype='csv', filename= 'avaliacao_empresa.txt')
             with smtplib.SMTP_SSL('smtp.gmail.com',465) as smtp:
-                smtp.login("macedojunior317@gmail.com","-L&!Pt'9#$l6")
+                smtp.login("cs.portfolio719@gmail.com","-L&!Pt'9#$l6")
                 smtp.send_message(msg)
     except Exception as e:
         print(f"Ocorreu um erro ao enviar a avaliação: {e}")
